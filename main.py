@@ -16,7 +16,7 @@ from flask_gravatar import Gravatar
 
 
 MY_EMAIL = "obludajohanliebert@gmail.com"
-PASSWORD = "taqvec-Bizra1-qacfyq"
+PASSWORD = "qpwyntonlyhcddpr"
 
 # =========================================================================== #
 
