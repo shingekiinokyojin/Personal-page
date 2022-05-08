@@ -15,14 +15,14 @@ from flask_gravatar import Gravatar
 
 
 
-MY_EMAIL = "obludajohanliebert@gmail.com"
-PASSWORD = "qpwyntonlyhcddpr"
+MY_EMAIL = "email@gmail.com"
+PASSWORD = "password"
 
 # =========================================================================== #
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = 'secretkey'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
