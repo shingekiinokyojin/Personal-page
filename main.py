@@ -1,7 +1,6 @@
 
 import datetime
 import smtplib
-from dotenv import load_dotenv
 from flask import Flask, render_template, redirect, url_for, flash, abort, request
 from flask_bootstrap import Bootstrap
 from flask_ckeditor import CKEditor
