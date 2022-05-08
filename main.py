@@ -1,10 +1,12 @@
+import os
+import datetime
+import smtplib
+from dotenv import load_dotenv
 from flask import Flask, render_template, redirect, url_for, flash, abort, request
 from flask_bootstrap import Bootstrap
 from flask_ckeditor import CKEditor
 from functools import wraps
 from datetime import date
-import datetime
-import smtplib
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
@@ -12,15 +14,16 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 
+load_dotenv()
 
-MY_EMAIL = "obludajohanliebert@gmail.com"
-PASSWORD = "taqvec-Bizra1-qacfyq"
+MY_EMAIL = os.getenv("MY_EMAIL")
+PASSWORD = os.getenv("PASSWORD")
 
 # =========================================================================== #
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
@@ -210,7 +213,7 @@ def contact():
             connection.login(user=MY_EMAIL, password=PASSWORD)
             connection.sendmail(
                 from_addr=MY_EMAIL, 
-                to_addrs="andriibb@icloud.com", 
+                to_addrs="obludajohanliebert@gmail.com", 
                 msg=email_message
         )
         return render_template("contact.html", current_user=current_user, year=year, msg_sent=True)
