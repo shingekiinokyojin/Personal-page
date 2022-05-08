@@ -1,4 +1,4 @@
-import os
+
 import datetime
 import smtplib
 from dotenv import load_dotenv
@@ -14,16 +14,16 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 
-load_dotenv()
 
-MY_EMAIL = os.getenv("MY_EMAIL")
-PASSWORD = os.getenv("PASSWORD")
+
+MY_EMAIL = "obludajohanliebert@gmail.com"
+PASSWORD = "taqvec-Bizra1-qacfyq"
 
 # =========================================================================== #
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
+app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
